@@ -1,0 +1,190 @@
+{
+  "adam_epsilon": 1e-08,
+  "average_subwords": true,
+  "batch_max_tokens": null,
+  "batch_size": 32,
+  "char_level": true,
+  "classpath": "hanlp.components.ner.transformer_ner.TransformerNamedEntityRecognizer",
+  "crf": false,
+  "delimiter_in_entity": null,
+  "epochs": 30,
+  "extra_embeddings": null,
+  "finetune": false,
+  "grad_norm": 1,
+  "gradient_accumulation": 1,
+  "hanlp_version": "2.1.0-beta.15",
+  "hard_constraint": true,
+  "hidden_dropout": null,
+  "layer_dropout": 0,
+  "lr": 0.001,
+  "max_seq_len": 510,
+  "merge_types": null,
+  "mix_embedding": 0,
+  "patience": 30,
+  "reduction": "mean",
+  "ret_raw_hidden_states": false,
+  "sampler_builder": {
+    "classpath": "hanlp.common.dataset.SortingSamplerBuilder",
+    "use_effective_tokens": false,
+    "batch_max_tokens": null,
+    "batch_size": 32
+  },
+  "scalar_mix": null,
+  "secondary_encoder": {
+    "in_features": 256,
+    "num_layers": 2,
+    "num_heads": 4,
+    "feedforward_dim": 128,
+    "dropout": 0.1,
+    "dropout_attn": 0.1,
+    "after_norm": true,
+    "k_as_x": true,
+    "classpath": "hanlp.layers.transformers.relative_transformer.RelativeTransformerEncoder"
+  },
+  "seed": 1644963691,
+  "sent_delimiter": null,
+  "tagset": null,
+  "token_key": null,
+  "transform": {
+    "classpath": "hanlp.common.transform.NormalizeCharacter",
+    "dst": "token",
+    "src": "token",
+    "mapper": "https://file.hankcs.com/hanlp/utils/char_table_20210602_202632.json.zip"
+  },
+  "transformer": "hfl/chinese-electra-180g-small-discriminator",
+  "transformer_grad_norm": null,
+  "transformer_layers": null,
+  "transformer_lr": 0.0001,
+  "warmup_steps": 0.1,
+  "weight_decay": 0,
+  "word_dropout": 0.1
+}
+Guess token_key=token according to the training dataset: 46184 samples: {'token': ['当', '希望工程', '救助', '的', '百万', '儿童', '成长', '起来', '，', '科教', '兴', '国', '蔚然成风', '时', '，', '今天', '有', '收藏', '价值', '的', '书', '你', '没', '买', '，', '明日', '就', '叫', '你', '悔不当初', '！'], 'tag': ['O', 'O', 'O', 'O', 'S-INTEGER', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']} ...
+tag[33] = ['O', 'S-INTEGER', 'S-ORDINAL', 'S-LOCATION', 'S-DATE', 'S-ORGANIZATION', 'B-LOCATION', 'M-LOCATION', 'E-LOCATION', 'S-PERSON', 'S-MONEY', 'S-DURATION', 'B-ORGANIZATION', 'E-ORGANIZATION', 'S-TIME', 'M-ORGANIZATION', 'S-LENGTH', 'S-AGE', 'S-FREQUENCY', 'S-ANGLE', 'S-PHONE', 'S-PERCENT', 'S-FRACTION', 'S-WEIGHT', 'S-AREA', 'S-CAPACTITY', 'S-DECIMAL', 'S-MEASURE', 'S-SPEED', 'S-TEMPERATURE', 'S-POSTALCODE', 'S-RATE', 'S-WWW']
+Guess the delimiter between tokens in named entity could be "". If not, specify `delimiter_in_entity` in `fit()`
+Model built with 12686113/12686113 trainable/total parameters.
+Using GPUs: [0]
+46184/4638 samples in trn/dev set.
+Epoch 1 / 30:
+1444/1444 loss: 0.3367 P: 29.77% R: 49.09% F1: 37.06% ET: 2 m 16 s
+  145/145 loss: 0.0455 P: 81.06% R: 84.53% F1: 82.76% ET: 7 s
+2 m 23 s / 1 h 11 m 16 s ETA: 1 h 8 m 53 s (saved)
+Epoch 2 / 30:
+1444/1444 loss: 0.0652 P: 51.56% R: 68.12% F1: 58.70% ET: 2 m 15 s
+  145/145 loss: 0.0355 P: 90.10% R: 88.83% F1: 89.46% ET: 7 s
+4 m 44 s / 1 h 11 m 5 s ETA: 1 h 6 m 21 s (saved)
+Epoch 3 / 30:
+1444/1444 loss: 0.0569 P: 62.15% R: 75.32% F1: 68.11% ET: 2 m 17 s
+  145/145 loss: 0.0356 P: 87.51% R: 88.44% F1: 87.97% ET: 7 s
+7 m 8 s / 1 h 11 m 21 s ETA: 1 h 4 m 13 s (1)
+Epoch 4 / 30:
+1444/1444 loss: 0.0510 P: 68.36% R: 79.12% F1: 73.35% ET: 2 m 15 s
+  145/145 loss: 0.0572 P: 80.38% R: 86.17% F1: 83.18% ET: 7 s
+9 m 30 s / 1 h 11 m 16 s ETA: 1 h 1 m 45 s (2)
+Epoch 5 / 30:
+1444/1444 loss: 0.0445 P: 72.58% R: 81.62% F1: 76.84% ET: 2 m 13 s
+  145/145 loss: 0.0409 P: 89.99% R: 90.60% F1: 90.29% ET: 7 s
+11 m 50 s / 1 h 11 m 3 s ETA: 59 m 12 s (saved)
+Epoch 6 / 30:
+1444/1444 loss: 0.0395 P: 75.66% R: 83.42% F1: 79.35% ET: 2 m 13 s
+  145/145 loss: 0.0421 P: 90.81% R: 89.19% F1: 89.99% ET: 7 s
+14 m 10 s / 1 h 10 m 52 s ETA: 56 m 42 s (1)
+Epoch 7 / 30:
+1444/1444 loss: 0.0354 P: 78.03% R: 84.81% F1: 81.28% ET: 2 m 13 s
+  145/145 loss: 0.0361 P: 92.54% R: 91.87% F1: 92.20% ET: 7 s
+16 m 30 s / 1 h 10 m 44 s ETA: 54 m 14 s (saved)
+Epoch 8 / 30:
+1444/1444 loss: 0.0331 P: 79.90% R: 85.90% F1: 82.79% ET: 2 m 14 s
+  145/145 loss: 0.0338 P: 93.58% R: 92.12% F1: 92.84% ET: 7 s
+18 m 52 s / 1 h 10 m 44 s ETA: 51 m 52 s (saved)
+Epoch 9 / 30:
+1444/1444 loss: 0.0300 P: 81.44% R: 86.80% F1: 84.03% ET: 2 m 14 s
+  145/145 loss: 0.0331 P: 93.29% R: 93.00% F1: 93.15% ET: 7 s
+21 m 13 s / 1 h 10 m 43 s ETA: 49 m 30 s (saved)
+Epoch 10 / 30:
+1444/1444 loss: 0.0277 P: 82.72% R: 87.56% F1: 85.07% ET: 2 m 13 s
+  145/145 loss: 0.0352 P: 94.46% R: 92.73% F1: 93.59% ET: 7 s
+23 m 33 s / 1 h 10 m 40 s ETA: 47 m 6 s (saved)
+Epoch 11 / 30:
+1444/1444 loss: 0.0261 P: 83.81% R: 88.21% F1: 85.96% ET: 2 m 13 s
+  145/145 loss: 0.0375 P: 94.52% R: 92.33% F1: 93.41% ET: 7 s
+25 m 53 s / 1 h 10 m 36 s ETA: 44 m 43 s (1)
+Epoch 12 / 30:
+1444/1444 loss: 0.0243 P: 84.75% R: 88.77% F1: 86.71% ET: 2 m 13 s
+  145/145 loss: 0.0386 P: 94.40% R: 92.09% F1: 93.23% ET: 7 s
+28 m 13 s / 1 h 10 m 33 s ETA: 42 m 20 s (2)
+Epoch 13 / 30:
+1444/1444 loss: 0.0229 P: 85.57% R: 89.27% F1: 87.38% ET: 2 m 13 s
+  145/145 loss: 0.0317 P: 93.89% R: 93.49% F1: 93.69% ET: 7 s
+30 m 33 s / 1 h 10 m 31 s ETA: 39 m 57 s (saved)
+Epoch 14 / 30:
+1444/1444 loss: 0.0216 P: 86.29% R: 89.71% F1: 87.97% ET: 2 m 13 s
+  145/145 loss: 0.0368 P: 93.92% R: 93.06% F1: 93.49% ET: 7 s
+32 m 53 s / 1 h 10 m 28 s ETA: 37 m 35 s (1)
+Epoch 15 / 30:
+1444/1444 loss: 0.0207 P: 86.94% R: 90.12% F1: 88.50% ET: 2 m 13 s
+  145/145 loss: 0.0324 P: 95.83% R: 91.54% F1: 93.64% ET: 7 s
+35 m 13 s / 1 h 10 m 26 s ETA: 35 m 13 s (2)
+Epoch 16 / 30:
+1444/1444 loss: 0.0195 P: 87.51% R: 90.48% F1: 88.97% ET: 2 m 13 s
+  145/145 loss: 0.0314 P: 94.28% R: 94.35% F1: 94.31% ET: 7 s
+37 m 33 s / 1 h 10 m 25 s ETA: 32 m 51 s (saved)
+Epoch 17 / 30:
+1444/1444 loss: 0.0184 P: 88.04% R: 90.81% F1: 89.40% ET: 2 m 13 s
+  145/145 loss: 0.0319 P: 94.54% R: 93.43% F1: 93.99% ET: 7 s
+39 m 53 s / 1 h 10 m 23 s ETA: 30 m 30 s (1)
+Epoch 18 / 30:
+1444/1444 loss: 0.0175 P: 88.52% R: 91.12% F1: 89.80% ET: 2 m 13 s
+  145/145 loss: 0.0352 P: 93.64% R: 94.84% F1: 94.24% ET: 7 s
+42 m 13 s / 1 h 10 m 22 s ETA: 28 m 9 s (2)
+Epoch 19 / 30:
+1444/1444 loss: 0.0164 P: 88.95% R: 91.40% F1: 90.16% ET: 2 m 13 s
+  145/145 loss: 0.0331 P: 94.74% R: 93.85% F1: 94.29% ET: 7 s
+44 m 34 s / 1 h 10 m 22 s ETA: 25 m 48 s (3)
+Epoch 20 / 30:
+1444/1444 loss: 0.0159 P: 89.35% R: 91.66% F1: 90.49% ET: 2 m 13 s
+  145/145 loss: 0.0309 P: 94.56% R: 94.61% F1: 94.58% ET: 7 s
+46 m 53 s / 1 h 10 m 20 s ETA: 23 m 27 s (saved)
+Epoch 21 / 30:
+1444/1444 loss: 0.0152 P: 89.73% R: 91.90% F1: 90.80% ET: 2 m 13 s
+  145/145 loss: 0.0316 P: 95.22% R: 94.14% F1: 94.67% ET: 7 s
+49 m 14 s / 1 h 10 m 19 s ETA: 21 m 6 s (saved)
+Epoch 22 / 30:
+1444/1444 loss: 0.0142 P: 90.07% R: 92.13% F1: 91.09% ET: 2 m 13 s
+  145/145 loss: 0.0324 P: 95.03% R: 94.35% F1: 94.69% ET: 7 s
+51 m 34 s / 1 h 10 m 19 s ETA: 18 m 45 s (saved)
+Epoch 23 / 30:
+1444/1444 loss: 0.0138 P: 90.39% R: 92.34% F1: 91.35% ET: 2 m 13 s
+  145/145 loss: 0.0316 P: 94.35% R: 94.28% F1: 94.32% ET: 7 s
+53 m 54 s / 1 h 10 m 18 s ETA: 16 m 24 s (1)
+Epoch 24 / 30:
+1444/1444 loss: 0.0132 P: 90.69% R: 92.54% F1: 91.60% ET: 2 m 13 s
+  145/145 loss: 0.0301 P: 94.60% R: 94.64% F1: 94.62% ET: 7 s
+56 m 14 s / 1 h 10 m 18 s ETA: 14 m 4 s (2)
+Epoch 25 / 30:
+1444/1444 loss: 0.0124 P: 90.96% R: 92.73% F1: 91.84% ET: 2 m 13 s
+  145/145 loss: 0.0358 P: 94.95% R: 94.43% F1: 94.69% ET: 7 s
+58 m 34 s / 1 h 10 m 17 s ETA: 11 m 43 s (saved)
+Epoch 26 / 30:
+1444/1444 loss: 0.0124 P: 91.22% R: 92.90% F1: 92.05% ET: 2 m 14 s
+  145/145 loss: 0.0305 P: 94.87% R: 94.87% F1: 94.87% ET: 7 s
+1 h 0 m 55 s / 1 h 10 m 17 s ETA: 9 m 22 s (saved)
+Epoch 27 / 30:
+1444/1444 loss: 0.0112 P: 91.47% R: 93.07% F1: 92.26% ET: 2 m 14 s
+  145/145 loss: 0.0333 P: 94.85% R: 94.82% F1: 94.84% ET: 7 s
+1 h 3 m 16 s / 1 h 10 m 18 s ETA: 7 m 2 s (1)
+Epoch 28 / 30:
+1444/1444 loss: 0.0111 P: 91.70% R: 93.23% F1: 92.46% ET: 2 m 14 s
+  145/145 loss: 0.0310 P: 94.60% R: 94.94% F1: 94.77% ET: 7 s
+1 h 5 m 37 s / 1 h 10 m 18 s ETA: 4 m 41 s (2)
+Epoch 29 / 30:
+1444/1444 loss: 0.0105 P: 91.91% R: 93.38% F1: 92.64% ET: 2 m 14 s
+  145/145 loss: 0.0322 P: 95.43% R: 94.90% F1: 95.16% ET: 7 s
+1 h 7 m 57 s / 1 h 10 m 18 s ETA: 2 m 21 s (saved)
+Epoch 30 / 30:
+1444/1444 loss: 0.0105 P: 92.12% R: 93.52% F1: 92.82% ET: 2 m 15 s
+  145/145 loss: 0.0303 P: 94.79% R: 95.05% F1: 94.92% ET: 7 s
+1 h 10 m 19 s / 1 h 10 m 19 s ETA: 0 s (1)
+Max score of dev is P: 95.43% R: 94.90% F1: 95.16% at epoch 29
+Average time of each epoch is 2 m 21 s
+1 h 10 m 19 s elapsed
